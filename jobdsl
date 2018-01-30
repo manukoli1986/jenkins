@@ -1,0 +1,11 @@
+freeStyleJob('Hellowolrd') {
+  description('My first job')
+  logRotator(-1, 10)
+  
+  parameter{
+    choiceParam {"SALUTATION" ,["Mr","Mrs"], 'Your Salutation'}
+	}
+  scm {
+    github('https://github.com/manukoli1986/jenkins.git', 'master')
+	}
+}
