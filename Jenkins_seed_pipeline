@@ -1,1 +1,20 @@
 #Jenkin seed jjob which created pipeline job with default parameter 
+#Define parameter for jobName, gitUrl and branchName which is being called below...
+
+pipelineJob(jobName) {
+  definition {
+	cpsScm {
+		scm {
+			git {
+				remote {
+				url(gitUrl)
+				}
+				extensions {
+				cleanAfterCheckout()
+				}
+				branch(branchName)
+			}
+		}
+	}
+  }
+}
